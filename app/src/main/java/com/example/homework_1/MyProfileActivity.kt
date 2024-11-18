@@ -1,8 +1,7 @@
-package com.example.homework_1.MyProfileActivity
+package com.example.homework_1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.homework_1.R
 
 class MyProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
