@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HomeWork_1</string>
+    <string name="log_out">Вийти</string>
+    <string name="settings">Налаштування</string>
+    <string name="standart_name">Lucile Alvarado</string>
+    <string name="career">Кар\'єра</string>
+    <string name="home_address">Домашня адреса</string>
+    <string name="edit_profile">Редагувати профіль</string>
+    <string name="view_my_contacts">ПЕРЕГЛЯНУТИ МОЇ КОНТАКТИ</string>
+    <string name="name">ім\'я</string>
+    <string name="let_s_get_acquainted">Давайте познайомимося</string>
+    <string name="fill_out_the_profile_and_go_to_the_application">Заповнюйте анкету та переходьте до заявки!</string>
+    <string name="e_mail">Пошта</string>
+    <string name="password">Пароль</string>
+    <string name="remember_me">Запам\'ятати</string>
+    <string name="google">GOOGLE</string>
+    <string name="or">або</string>
+    <string name="register">Реєстрація</string>
+    <string name="by_clicking_register_you_agree_to_our_terms_and_conditions">Натискаючи зареєструватися, ви погоджуєтеся з нашими Умовами та положеннями</string>
+    <string name="already_have_an_account">Вже маєте акаунт?</string>
+    <string name="sign_in">Увiйти</string>
+</resources>
