@@ -142,41 +142,54 @@
         android:buttonTint="@color/checkbox"
         android:button="@drawable/custom_checkbox" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout_googleButton"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox_rememberMe"
+    <View
+        android:id="@+id/view_google_button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/google_button_top_margin"
-        android:background="@drawable/google_button_background"
-        android:gravity="center"
-        android:minHeight="@dimen/google_button_min_h"
-        android:orientation="horizontal" >
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/flow_google_button"
+        app:layout_constraintBottom_toBottomOf="@id/flow_google_button"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        android:background="@drawable/google_button_background">
+    </View>
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView_google_background"
         android:layout_width="@dimen/google_ImageView_w_h"
         android:layout_height="@dimen/google_ImageView_w_h"
         android:src="@drawable/google" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/open_sans_medium"
-            android:letterSpacing="0.15"
-            android:text="@string/google_button"
-            android:textColor="@color/google_button_text"
-            android:textSize="@dimen/buttons_text_size"
-            android:textStyle="bold" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/text_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_medium"
+        android:letterSpacing="0.15"
+        android:text="@string/google_button"
+        android:textColor="@color/black"
+        android:textSize="@dimen/buttons_text_size"
+        android:textStyle="bold"
+        android:paddingVertical="@dimen/google_vertical_padding"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_google_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/checkBox_rememberMe"
+        android:layout_marginTop="@dimen/google_button_top_margin"
+        app:constraint_referenced_ids="imageView_google_background,text_google"
+        app:flow_horizontalAlign="center"
+        app:flow_horizontalGap="@dimen/google_button_horizontal_gap"
+        app:flow_horizontalStyle="packed"
+        app:flow_verticalAlign="center" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_or"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout_googleButton"
+        app:layout_constraintTop_toBottomOf="@+id/flow_google_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/or_top_margin"

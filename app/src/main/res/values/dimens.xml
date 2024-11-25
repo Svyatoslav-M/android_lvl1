@@ -7,7 +7,8 @@
     <dimen name="password_top_margin">16dp</dimen>
     <dimen name="google_button_top_margin">60dp</dimen>
     <dimen name="google_ImageView_w_h">24dp</dimen>
-    <dimen name="google_button_min_h">45dip</dimen>
+    <dimen name="google_vertical_padding">8dp</dimen>
+    <dimen name="google_button_horizontal_gap">10dp</dimen>
     <dimen name="or_top_margin">8dp</dimen>
     <dimen name="register_button_top_margin">8dp</dimen>
     <dimen name="register_button_min_h">58dip</dimen>
