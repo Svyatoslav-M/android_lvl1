@@ -159,7 +159,7 @@
         android:layout_height="@dimen/google_ImageView_w_h"
         android:src="@drawable/google" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

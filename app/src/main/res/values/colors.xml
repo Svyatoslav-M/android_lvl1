@@ -11,4 +11,7 @@
     <color name="button_register_text">#FFFFFFFF</color>
     <color name="error">#cc0000</color>
     <color name="checkbox">#FFFFFFFF</color>
+
+    <color name="button_view_my_contacts">#FB5E06</color>
+    <color name="socialNetwork_circle">#FB5E06</color>
 </resources>

@@ -4,7 +4,7 @@
     <string name="title_activity_main2">MainActivity2</string>
     <string name="log_out_button_my_profile">Log out</string>
     <string name="settings_text_my_profile">Settings</string>
-    <string name="career">Career</string>
+    <string name="career_text_my_profile">Career</string>
     <string name="home_address_text_my_profile">Home address</string>
     <string name="edit_profile_button">Edit profile</string>
     <string name="view_my_contacts_button">VIEW MY CONTACTS</string>
