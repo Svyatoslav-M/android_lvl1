@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.homework_1"
+    namespace = "com.smelnykov.homework_1"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.homework_1"
+        applicationId = "com.smelnykov.homework_1"
         minSdk = 26
         targetSdk = 33
         versionCode = 1
@@ -40,6 +40,10 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
