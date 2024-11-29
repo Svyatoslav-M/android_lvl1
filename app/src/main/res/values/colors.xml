@@ -2,6 +2,7 @@
 <resources>
     <!--Auth activity colors-->
     <color name="primary_background">#242235</color>
+    <color name="secondary_background">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="primary_text">#FFFFFFFF</color>
     <color name="secondary_text">#B2B2B3</color>
