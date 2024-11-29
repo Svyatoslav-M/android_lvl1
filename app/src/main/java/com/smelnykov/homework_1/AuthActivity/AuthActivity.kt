@@ -1,6 +1,8 @@
 package com.smelnykov.homework_1.AuthActivity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,12 +15,20 @@ import com.smelnykov.homework_1.databinding.ActivityAuthBinding
  */
 class AuthActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityAuthBinding
+    private lateinit var binding: ActivityAuthBinding
+    private lateinit var sharedPreference: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        sharedPreference =
+            getSharedPreferences(Constants.AUTOLOGIN_PREFERENCE, Context.MODE_PRIVATE)
+
+        if (sharedPreference.contains(Constants.EMAIL_AUTH_KEY)) {
+            authLogin()
+        }
 
         setClickListeners()
     }
@@ -56,18 +66,34 @@ class AuthActivity : AppCompatActivity() {
             }
 
             if (isAllFieldsCorrect) {
-                sendEmail(editTextEmail.text.toString())
+                registerAndChangeActivity(
+                    editTextEmail.text.toString(),
+                    editTextPassword.text.toString()
+                )
             }
         }
     }
 
     /**
-     * Method for sending email to My Profile Activity.
-     * @param email email which will be send
+     * Method for saving email, password and change activity to My Profile Activity.
+     * @param email email which will be saved
+     * @param password password which will be saved
      * */
-    private fun sendEmail(email: String) {
+    private fun registerAndChangeActivity(email: String, password: String) {
+        val editor = sharedPreference.edit()
+        editor.putString(Constants.EMAIL_AUTH_KEY, email)
+        editor.putString(Constants.PASSWORD_AUTH_KEY, password)
+        editor.apply()
+
         val intent = Intent(this@AuthActivity, MyProfileActivity::class.java)
-        intent.putExtra(Constants.EMAIL_AUTH_KEY, email)
+        startActivity(intent)
+    }
+
+    /**
+     * Method for autologin redirection to my profile activity.
+     * */
+    private fun authLogin() {
+        val intent = Intent(this@AuthActivity, MyProfileActivity::class.java)
         startActivity(intent)
     }
 
