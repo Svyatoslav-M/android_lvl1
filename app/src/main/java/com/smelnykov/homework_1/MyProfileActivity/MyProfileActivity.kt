@@ -45,16 +45,9 @@ class MyProfileActivity : AppCompatActivity() {
     private fun setClickListeners() {
 
         binding.appCompatButtonLogOut.setOnClickListener {
-            clearData()
+            AuthPreferences.clearData(this)
             logOutRedirection()
         }
-    }
-
-    /**
-     * Method clears users data in sharedPreference.
-     * */
-    private fun clearData() {
-        AuthPreferences.clearData(this)
     }
 
     /**
