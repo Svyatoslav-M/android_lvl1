@@ -1,12 +1,10 @@
 package com.smelnykov.homework_1.AuthActivity
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.smelnykov.homework_1.Constants.Constants
+import com.smelnykov.homework_1.AuthPreferences.AuthPreferences
 import com.smelnykov.homework_1.MyProfileActivity.MyProfileActivity
 import com.smelnykov.homework_1.databinding.ActivityAuthBinding
 
@@ -15,19 +13,16 @@ import com.smelnykov.homework_1.databinding.ActivityAuthBinding
  */
 class AuthActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAuthBinding
-    private lateinit var sharedPreference: SharedPreferences
+    private val binding: ActivityAuthBinding by lazy {
+        ActivityAuthBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAuthBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
-        sharedPreference =
-            getSharedPreferences(Constants.AUTOLOGIN_PREFERENCE, Context.MODE_PRIVATE)
-
-        if (sharedPreference.contains(Constants.EMAIL_AUTH_KEY)) {
-            authLogin()
+        if (AuthPreferences.isUserLoggedIn(this)) {
+            autoLogin()
         }
 
         setClickListeners()
@@ -80,21 +75,26 @@ class AuthActivity : AppCompatActivity() {
      * @param password password which will be saved
      * */
     private fun registerAndChangeActivity(email: String, password: String) {
-        val editor = sharedPreference.edit()
-        editor.putString(Constants.EMAIL_AUTH_KEY, email)
-        editor.putString(Constants.PASSWORD_AUTH_KEY, password)
-        editor.apply()
+        // Save user credentials
+        AuthPreferences.saveCredentials(this, email, password)
 
-        val intent = Intent(this@AuthActivity, MyProfileActivity::class.java)
+        // Start the new activity
+        navigateToProfile()
+    }
+
+    private fun navigateToProfile() {
+        val intent = Intent(this, MyProfileActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     /**
      * Method for autologin redirection to my profile activity.
      * */
-    private fun authLogin() {
+    private fun autoLogin() {
         val intent = Intent(this@AuthActivity, MyProfileActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 }

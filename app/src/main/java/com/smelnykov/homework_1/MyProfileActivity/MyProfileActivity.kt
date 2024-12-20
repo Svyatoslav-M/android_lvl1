@@ -1,15 +1,10 @@
 package com.smelnykov.homework_1.MyProfileActivity
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.smelnykov.homework_1.AuthActivity.AuthActivity
-import com.smelnykov.homework_1.AuthActivity.FieldsChecker
-import com.smelnykov.homework_1.Constants.Constants
+import com.smelnykov.homework_1.AuthPreferences.AuthPreferences
 import com.smelnykov.homework_1.databinding.ActivityMyProfileBinding
 
 /**
@@ -17,17 +12,16 @@ import com.smelnykov.homework_1.databinding.ActivityMyProfileBinding
  */
 class MyProfileActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMyProfileBinding
-    private lateinit var sharedPreference: SharedPreferences
+    private val binding: ActivityMyProfileBinding by lazy {
+        ActivityMyProfileBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMyProfileBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
-        sharedPreference =
-            getSharedPreferences(Constants.AUTOLOGIN_PREFERENCE, Context.MODE_PRIVATE)
-        val email = sharedPreference.getString(Constants.EMAIL_AUTH_KEY, null)
+        val email = AuthPreferences.getUserEmail(this)
         if (email != null) {
             setNameFromEmail(email)
         }
@@ -50,9 +44,7 @@ class MyProfileActivity : AppCompatActivity() {
      */
     private fun setClickListeners() {
 
-        val buttonLogOut = binding.appCompatButtonLogOut
-
-        buttonLogOut.setOnClickListener {
+        binding.appCompatButtonLogOut.setOnClickListener {
             clearData()
             logOutRedirection()
         }
@@ -62,9 +54,7 @@ class MyProfileActivity : AppCompatActivity() {
      * Method clears users data in sharedPreference.
      * */
     private fun clearData() {
-        val editor = sharedPreference.edit()
-        editor.clear()
-        editor.apply()
+        AuthPreferences.clearData(this)
     }
 
     /**
@@ -73,5 +63,6 @@ class MyProfileActivity : AppCompatActivity() {
     private fun logOutRedirection() {
         val intent = Intent(this@MyProfileActivity, AuthActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }
