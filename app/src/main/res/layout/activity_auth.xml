@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_padding"
         android:fontFamily="@font/open_sans_medium"
-        android:text="@string/mainText_authActivity"
+        android:text="@string/mainText_auth"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/main_text_size" />
 
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_between_main_text_and_secondary_text"
-        android:text="@string/secondaryText_authActivity"
+        android:text="@string/secondaryText_auth"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/secondary_text_size" />
 
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/email_top_margin"
         android:fontFamily="@font/open_sans_medium"
-        android:text="@string/e_mail_text_auth_activity"
+        android:text="@string/e_mail_text"
         android:textColor="@color/secondary_text"
         android:textSize="@dimen/email_password_remember_me_text_size"/>
 
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/password_top_margin"
         android:fontFamily="@font/open_sans_medium"
-        android:text="@string/password_text_auth_activity"
+        android:text="@string/password_text"
         android:textColor="@color/secondary_text"
         android:textSize="@dimen/email_password_remember_me_text_size"/>
 
@@ -138,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/open_sans_medium"
-        android:text="@string/remember_me_checkbox_auth_activity"
+        android:text="@string/remember_me_checkbox"
         android:textSize="@dimen/email_password_remember_me_text_size"
         android:textColor="@color/secondary_text"
         android:buttonTint="@color/checkbox"
@@ -195,7 +195,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/or_top_margin"
-        android:text="@string/or_text_auth_activity"
+        android:text="@string/or_text"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/or_text_Size" />
 
@@ -208,7 +208,7 @@
         android:fontFamily="@font/open_sans_medium"
         android:letterSpacing="0.15"
         android:minHeight="@dimen/register_button_min_h"
-        android:text="@string/register_button_auth_activity"
+        android:text="@string/register_button"
         android:textColor="@color/button_register_text"
         android:textSize="@dimen/buttons_text_size"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
@@ -225,7 +225,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/terms_and_conditions_top_margin"
         android:fontFamily="@font/open_sans_medium"
-        android:text="@string/terms_and_conditions_auth_activity"
+        android:text="@string/terms_and_conditions"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/terms_and_conditions_text_size"
         android:gravity="center"/>
@@ -241,7 +241,7 @@
         android:layout_marginStart="@dimen/already_have_an_acc_sign_in_left_and_right_margin"
         android:layout_marginTop="@dimen/already_have_an_acc_sign_in_top_margin"
         android:fontFamily="@font/open_sans_medium"
-        android:text="@string/already_have_an_account_auth_activity"
+        android:text="@string/already_have_an_account"
         android:textColor="@color/secondary_text"
         android:textStyle="bold"
         android:textSize="@dimen/already_have_an_acc_sign_in_text_size"/>
@@ -257,7 +257,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/already_have_an_acc_sign_in_left_and_right_margin"
         android:fontFamily="@font/open_sans_medium"
-        android:text="@string/sign_in_auth_activity"
+        android:text="@string/sign_in"
         android:textColor="@color/primary_text"
         android:textStyle="bold"
         android:textSize="@dimen/already_have_an_acc_sign_in_text_size"/>

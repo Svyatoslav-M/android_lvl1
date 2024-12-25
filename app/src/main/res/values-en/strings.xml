@@ -12,17 +12,17 @@
     <string name="name_text_my_profile">name</string>
 
     <!--Auth activity-->
-    <string name="mainText_authActivity">Let\'s get acquainted</string>
-    <string name="secondaryText_authActivity">Fill out the profile and go to the application!</string>
-    <string name="e_mail_text_auth_activity">E-mail</string>
-    <string name="password_text_auth_activity">Password</string>
-    <string name="remember_me_checkbox_auth_activity">Remember me</string>
+    <string name="mainText_auth">Let\'s get acquainted</string>
+    <string name="secondaryText_auth">Fill out the profile and go to the application!</string>
+    <string name="e_mail_text">E-mail</string>
+    <string name="password_text">Password</string>
+    <string name="remember_me_checkbox">Remember me</string>
     <string name="google_button">GOOGLE</string>
-    <string name="or_text_auth_activity">or</string>
-    <string name="register_button_auth_activity">Register</string>
-    <string name="terms_and_conditions_auth_activity">By clicking register you agree to our Terms\n and Conditions</string>
-    <string name="already_have_an_account_auth_activity">Already have an account?</string>
-    <string name="sign_in_auth_activity">Sign in</string>
+    <string name="or_text">or</string>
+    <string name="register_button">Register</string>
+    <string name="terms_and_conditions">By clicking register you agree to our Terms\n and Conditions</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
     <string name="email_error">Incorrect E-Mail address</string>
     <string name="password_error">Your password could include a minimum 8 characters</string>
 </resources>
