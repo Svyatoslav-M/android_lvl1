@@ -1,11 +1,12 @@
-package com.smelnykov.homework_1.MyProfileActivity
+package com.shpp.smelnykov.MyProfileActivity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.smelnykov.homework_1.AuthActivity.AuthActivity
-import com.smelnykov.homework_1.AuthPreferences.AuthPreferences
-import com.smelnykov.homework_1.databinding.ActivityMyProfileBinding
+import com.shpp.smelnykov.AuthActivity.AuthActivity
+import com.shpp.smelnykov.AuthPreferences.AuthPreferences
+import com.shpp.smelnykov.MyContacts.MyContactsActivity
+import com.shpp.smelnykov.databinding.ActivityMyProfileBinding
 
 /**
  * Class for my profile activity.
@@ -48,6 +49,9 @@ class MyProfileActivity : AppCompatActivity() {
             AuthPreferences.clearData(this)
             logOutRedirection()
         }
+        binding.appCompatImageViewContacts.setOnClickListener {
+            viewMyContacts()
+        }
     }
 
     /**
@@ -57,5 +61,10 @@ class MyProfileActivity : AppCompatActivity() {
         val intent = Intent(this@MyProfileActivity, AuthActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun viewMyContacts() {
+        val intent = Intent(this@MyProfileActivity, MyContactsActivity::class.java)
+        startActivity(intent)
     }
 }
