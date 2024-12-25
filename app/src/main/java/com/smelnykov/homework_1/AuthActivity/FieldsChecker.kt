@@ -1,9 +1,6 @@
 package com.smelnykov.homework_1.AuthActivity
 
 import android.util.Patterns
-import android.widget.EditText
-import androidx.appcompat.widget.AppCompatTextView
-import com.smelnykov.homework_1.Constants.Constants
 
 /**
  * Object for checking email and passwords fields.
@@ -17,7 +14,7 @@ class FieldsChecker {
      * */
     fun checkPassword(editTextPassword: String): Boolean {
         //Regex for password. Minimum eight characters
-        val passwordRegex = Regex(".{${Constants.MIN_PASSWORD_LENGTH},}")
+        val passwordRegex = Regex(".{${MIN_PASSWORD_LENGTH},}")
         if (passwordRegex.matches(editTextPassword)) {
             return true
         }
@@ -37,5 +34,12 @@ class FieldsChecker {
             return true
         }
         return false
+    }
+
+    companion object {
+        /**
+         * Constant for minimal length of password
+         * */
+        private const val MIN_PASSWORD_LENGTH = 8
     }
 }
