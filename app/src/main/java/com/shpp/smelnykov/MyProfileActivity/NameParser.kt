@@ -1,4 +1,4 @@
-package com.smelnykov.homework_1.MyProfileActivity
+package com.shpp.smelnykov.MyProfileActivity
 
 /**
  * Name and surname parser object.

@@ -1,4 +1,4 @@
-package com.smelnykov.homework_1.AuthPreferences
+package com.shpp.smelnykov.AuthPreferences
 
 import android.content.Context
 

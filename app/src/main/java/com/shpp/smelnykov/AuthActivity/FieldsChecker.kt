@@ -1,4 +1,4 @@
-package com.smelnykov.homework_1.AuthActivity
+package com.shpp.smelnykov.AuthActivity
 
 import android.util.Patterns
 
